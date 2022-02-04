@@ -52,7 +52,7 @@
       {{$posts->links()}}
     </div>
 
-    <div>
+    <div class="mt-5">
       @foreach ($categories as $category)
         <h2>{{$category->name}}</h2>
         <ul>

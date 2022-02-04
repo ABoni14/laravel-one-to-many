@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <a href="{{route("admin.posts.index")}}"><-- Torna indietro</a>
     <h2>{{ $post->title }}</h2>
     <p>{{ $post->content }}</p>
     <h4 class="mb-3">
