@@ -40,14 +40,16 @@
         <h6>{{$message}}</h6>
       @enderror
       </div>
+
       <div class="mb-3">
-        <select class="form-select" aria-label="Default select example" name="catgory_id" id="category_id">
-          <option >Categorie</option>
+        <label for="category_id" class="form-label">Inserisci una categoria</label>
+        <select class="form-select" name="catgory_id" id="category_id">
           @foreach ($categories as $category)
-            <option @if($category->id == old("category_id")) selected @endif value="{{$category->id}}">{{$category->name}}</option>
+            <option @if($category->id == old("category_id", $post->category_id)) selected @endif value="{{$category->id}}">{{$category->name}}</option>
           @endforeach
         </select>
       </div>
+
       <button type="submit" class="btn btn-primary">Change</button>
     </form>
 </div>

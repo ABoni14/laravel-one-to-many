@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-      <h2>Elenco posts</h2>
+    <div class="justify-content-center">
+      <h2 class="text-center">Elenco posts</h2>
       @if (session("deleted"))
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-success d-block" role="alert">
           {{session("deleted")}}
         </div>
       @endif
@@ -25,11 +25,10 @@
           @foreach ($posts as $post)
           <tr>
             <th scope="row">{{$post->id}}</th>
-            <td>
-              {{$post->title}}</td>
+            <td>{{$post->title}}</td>
             <td>
               @if ($post->category)
-                <td>{{$post->category->name}}</td>
+                {{$post->category->name}}
               @else
                 -
               @endif
